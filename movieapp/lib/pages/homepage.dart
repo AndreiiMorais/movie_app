@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ValueListenableBuilder<Movies>(
+        body: ValueListenableBuilder<Movies?>(
       valueListenable: _controller.movies,
       builder: (_, movies, __) {
         return movies != null
