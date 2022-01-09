@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:dio/src/dio.dart';
 import 'package:movieapp/services/dio_service.dart';
 
 class DioServiceImp implements DioService {
@@ -7,10 +6,11 @@ class DioServiceImp implements DioService {
   Dio getDio() {
     return Dio(
       BaseOptions(
-        baseUrl: 'https://api.themoviedb.org/4/',//meu token é versao 3
+        baseUrl: 'https://api.themoviedb.org/4/', //meu token é versao 3
         headers: {
           'contente-type': 'application/json;charset=utf-8',
-          'authorization': 'Bearer c625bc4b020f4c41753a3544799a9bb7'
+          'authorization':
+              'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNjI1YmM0YjAyMGY0YzQxNzUzYTM1NDQ3OTlhOWJiNyIsInN1YiI6IjYxZGEyNmQxNmM4NDkyMDA0MWJhNmNhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kBK_b7CcuOuWcq1DwIqrUOM4yE79XmO7pShfbpZ4o3Q'
         },
       ),
     );
