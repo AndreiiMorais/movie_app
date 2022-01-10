@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                 builder: (_, movies, __) {
                   return movies != null
                       ? ListView.separated(
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           separatorBuilder: (_, __) => const Divider(),
                           shrinkWrap: true,
                           itemCount: movies.listMovie.length,
