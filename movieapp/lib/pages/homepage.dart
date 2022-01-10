@@ -20,16 +20,36 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ValueListenableBuilder<Movies?>(
-      valueListenable: _controller.movies,
-      builder: (_, movies, __) {
-        return movies != null
-            ? ListView.builder(
-                itemCount: movies.listMovie.length,
-                itemBuilder: (_, idx) => Text(movies.listMovie[idx].title),
-              )
-            : Container();
-      },
-    ));
+      body: Padding(
+        padding: EdgeInsets.all(28),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 30),
+            Text(
+              'Movies',
+              style: Theme.of(context).textTheme.headline3,
+            ),
+            Container(
+              height: 544,
+              child: ValueListenableBuilder<Movies?>(
+                valueListenable: _controller.movies,
+                builder: (_, movies, __) {
+                  return movies != null
+                      ? ListView.separated(
+                          separatorBuilder: (_, __) => Divider(),
+                          shrinkWrap: true,
+                          itemCount: movies.listMovie.length,
+                          itemBuilder: (_, idx) =>
+                              Text(movies.listMovie[idx].title),
+                        )
+                      : Container();
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
