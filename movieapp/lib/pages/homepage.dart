@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                           'Movies',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 5),
                         TextField(
                           onChanged: _controller.onChanged,
                         ),

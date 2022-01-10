@@ -78,6 +78,96 @@ class Movies {
     _data['total_results'] = totalResults;
     return _data;
   }
+
+  @override
+  String toString() {
+    return 'Movies(averageRating: $averageRating, backdropPath: $backdropPath, createdBy: $createdBy, description: $description, id: $id, iso_3166_1: $iso_3166_1, iso_639_1: $iso_639_1, name: $name, page: $page, posterPath: $posterPath, public: $public, listMovie: $listMovie, revenue: $revenue, runtime: $runtime, sortBy: $sortBy, totalPages: $totalPages, totalResults: $totalResults)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Movies &&
+        other.averageRating == averageRating &&
+        other.backdropPath == backdropPath &&
+        other.createdBy == createdBy &&
+        other.description == description &&
+        other.id == id &&
+        other.iso_3166_1 == iso_3166_1 &&
+        other.iso_639_1 == iso_639_1 &&
+        other.name == name &&
+        other.page == page &&
+        other.posterPath == posterPath &&
+        other.public == public &&
+        other.listMovie == listMovie &&
+        other.revenue == revenue &&
+        other.runtime == runtime &&
+        other.sortBy == sortBy &&
+        other.totalPages == totalPages &&
+        other.totalResults == totalResults;
+  }
+
+  @override
+  int get hashCode {
+    return averageRating.hashCode ^
+        backdropPath.hashCode ^
+        createdBy.hashCode ^
+        description.hashCode ^
+        id.hashCode ^
+        iso_3166_1.hashCode ^
+        iso_639_1.hashCode ^
+        name.hashCode ^
+        page.hashCode ^
+        posterPath.hashCode ^
+        public.hashCode ^
+        listMovie.hashCode ^
+        revenue.hashCode ^
+        runtime.hashCode ^
+        sortBy.hashCode ^
+        totalPages.hashCode ^
+        totalResults.hashCode;
+  }
+
+  Movies copyWith({
+    double? averageRating,
+    String? backdropPath,
+    CreatedBy? createdBy,
+    String? description,
+    int? id,
+    String? iso_3166_1,
+    String? iso_639_1,
+    String? name,
+    int? page,
+    String? posterPath,
+    bool? public,
+    List<Movie>? listMovie,
+    int? revenue,
+    int? runtime,
+    String? sortBy,
+    int? totalPages,
+    int? totalResults,
+  }) {
+    return Movies(
+      averageRating: averageRating ?? this.averageRating,
+      backdropPath: backdropPath ?? this.backdropPath,
+      createdBy: createdBy ?? this.createdBy,
+      description: description ?? this.description,
+      id: id ?? this.id,
+      iso_3166_1: iso_3166_1 ?? this.iso_3166_1,
+      iso_639_1: iso_639_1 ?? this.iso_639_1,
+      name: name ?? this.name,
+      page: page ?? this.page,
+      posterPath: posterPath ?? this.posterPath,
+      public: public ?? this.public,
+      listMovie: listMovie ?? this.listMovie,
+      revenue: revenue ?? this.revenue,
+      runtime: runtime ?? this.runtime,
+      sortBy: sortBy ?? this.sortBy,
+      totalPages: totalPages ?? this.totalPages,
+      totalResults: totalResults ?? this.totalResults,
+    );
+  }
 }
 
 class CreatedBy {
