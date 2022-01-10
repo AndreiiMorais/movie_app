@@ -1,12 +1,9 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:movieapp/controllers/movie_controller.dart';
 import 'package:movieapp/models/movies_model.dart';
-import 'package:movieapp/repositories/movies_repository.dart';
 import 'package:movieapp/repositories/movies_repository_imp.dart';
 import 'package:movieapp/services/dio_service_imp.dart';
-import 'package:movieapp/utils/apis_utils.dart';
+import 'package:movieapp/widgets/custom_List_card_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,8 +40,9 @@ class _HomePageState extends State<HomePage> {
                           separatorBuilder: (_, __) => const Divider(),
                           shrinkWrap: true,
                           itemCount: movies.listMovie.length,
-                          itemBuilder: (_, idx) => Image.network(API
-                              .REQUEST_IMG(movies.listMovie[idx].posterPath)),
+                          itemBuilder: (_, idx) => CustomListCardWidget(
+                            movie: movies.listMovie[idx],
+                          ),
                         )
                       : Container();
                 },
