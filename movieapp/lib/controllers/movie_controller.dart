@@ -16,6 +16,8 @@ class MovieController {
         .where(
             (e) => e.toString().toLowerCase().contains((value.toLowerCase())))
         .toList();
+    movies.value = movies.value!.copyWith(listMovie: list);
+    //se n passar argumento pro copyWith, ele retorna o movie exatamente como era pra ser.
   }
 
   fetch() async {
